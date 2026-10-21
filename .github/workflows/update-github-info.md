@@ -22,6 +22,7 @@ network:
   allowed:
     - github.blog
     - github.com
+    - awesome-copilot.github.com
 safe-outputs:
   create-pull-request:
     title-prefix: "[update-github-info] "
@@ -44,9 +45,10 @@ publication decision to Mona.
 2. Use GitHub pull request API tools to check for an open pull request whose
    title starts with `[update-github-info]`. If one exists, use the `noop` safe
    output to explain that Mona already has an update awaiting review, and stop.
-3. Use web-fetch to fetch both public sources:
+3. Use web-fetch to fetch all three public sources:
    - https://github.blog/latest/
    - https://github.blog/changelog/
+   - https://awesome-copilot.github.com/workflows/ (Awesome Copilot workflows)
    Fetch relevant linked articles with web-fetch when needed to verify details.
    Read external public guidance with web-fetch, not shell commands.
 
